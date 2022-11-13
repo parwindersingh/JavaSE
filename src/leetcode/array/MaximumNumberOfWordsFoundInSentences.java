@@ -5,8 +5,6 @@ Output: 6
  */
 package leetcode.array;
 
-import java.util.Arrays;
-
 public class MaximumNumberOfWordsFoundInSentences {
     public static int mostWordsFound(String[] sentences) {
         int max=0;
