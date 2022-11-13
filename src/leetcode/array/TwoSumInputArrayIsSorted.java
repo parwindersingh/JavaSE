@@ -1,5 +1,5 @@
 //Leetcode: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
-package leetcode;
+package leetcode.array;
 
 import java.util.HashMap;
 import java.util.Map;

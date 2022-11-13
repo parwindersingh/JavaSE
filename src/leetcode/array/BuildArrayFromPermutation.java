@@ -1,5 +1,5 @@
 //leetcode: https://leetcode.com/problems/build-array-from-permutation/
-package leetcode;
+package leetcode.array;
 
 import java.util.Arrays;
 

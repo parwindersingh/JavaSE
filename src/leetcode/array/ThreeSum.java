@@ -1,6 +1,6 @@
 //Leetcode: https://leetcode.com/problems/3sum/
 
-package leetcode;
+package leetcode.array;
 
 import java.util.List;
 import java.util.Map;
