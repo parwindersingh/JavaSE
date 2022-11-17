@@ -2,16 +2,12 @@
 
 package leetcode.array;
 
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class ThreeSum {
 
     public static List<List<Integer>> threeSum(int[] nums) {
-        Map<String, Boolean> map = new HashMap<>();
+        Set<List<Integer>> set = new HashSet<>();
         Arrays.sort(nums);
 
         for(int i=0; i<nums.length; i++){
@@ -25,30 +21,28 @@ public class ThreeSum {
                     leftPointer++;
                 }
                 else if(nums[i] + nums[leftPointer] + nums[rightPointer] == 0){
-                    map.put(( nums[i] + "," + nums[leftPointer] + "," + nums[rightPointer]), true);
+                    ArrayList<Integer> tempList = new ArrayList<>();
+                    tempList.add(nums[i]);
+                    tempList.add(nums[leftPointer]);
+                    tempList.add(nums[rightPointer]);
+
+                    set.add(tempList);
+
                     leftPointer++;
                     rightPointer--;
                 }
             }
         }
 
-        List<List<Integer>> list = new ArrayList<>();
-        for (String key : map.keySet()) {
-            String[] arr = key.split(",");
-            List<Integer> tempList = new ArrayList<>();
-            for(String val : arr){
-                tempList.add(Integer.parseInt(val));
-            }
-            list.add(tempList);
-        }
+        List<List<Integer>> list = new ArrayList<>(set);
+
         return list;
     }
 
     public static void main(String args[]){
         List<List<Integer>> result = threeSum(new int[]{-1,0,1,2,-1,-4});
         for(List ls : result){
-            ls.forEach(s -> System.out.print(s.toString()+" "));
-            System.out.println();
+            System.out.println(ls);
         }
     }
 }
